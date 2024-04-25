@@ -1,0 +1,100 @@
+
+ @import "bootstrap";
+
+ header {
+  width: 1440px;
+  height: 120px;
+  padding: 0px 40px 0px 40px;
+  background: #1B5678;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+ 
+
+ .header-title {
+   width: 201px;
+   height: 42px;
+   font-family: "Roboto";
+   font-weight: 700;
+   font-size: 36px;
+   line-height: 42.19px;
+   color: #FFFFFF;
+   white-space: nowrap;
+ }
+
+ .button-white {
+  width: 152px;
+  height: 53px;
+ }
+
+ footer {
+  width: 1440px;
+  height: 40px;
+  top: 984px;
+  padding: 0px 40px 0px 40px;
+  background: #1B5678;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-logo {
+  width: 102px;
+  height: 21px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.09px;
+  font-family: "Roboto";
+  white-space: nowrap;
+  color: #FFFFFF;
+ }
+
+ .title {
+  height: 48px;
+  font-family: "Roboto";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 48.02px;
+ }
+
+ .form-field {
+  width: 480px;
+  height: 341px;
+ }
+
+ .button-blue {
+  width: 232px;
+  height: 53px;
+  background-color: #1B5678;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.09px;
+  color: #FFFFFF;
+ }
+
+.field input {
+  border-radius: 0%;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0.15px;
+}
+
+.field label {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0.15px;
+  color: #0000008A;
+}
+
+.error-message {
+  color: #ec1212;
+}
+
+ 
