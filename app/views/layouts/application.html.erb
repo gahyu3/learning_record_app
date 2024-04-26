@@ -12,13 +12,13 @@
 
   <body>
     <% if user_signed_in? %>
-    <%= render "shared/header" %>
-    <% elsif current_page?(new_user_session_path) %>
-    <%= render "shared/login_header" %>
+      <%= render "shared/header" %>
+    <% elsif request.path == new_user_session_path %>
+      <%= render "shared/login_header" %>
     <% else %>
-    <%= render "shared/before_login_header" %>
+      <%= render "shared/before_login_header" %>
     <% end %>
-    <%= yield %>
-    <%= render "shared/footer" %>
+      <%= yield %>
+      <%= render "shared/footer" %>
   </body>
 </html>
