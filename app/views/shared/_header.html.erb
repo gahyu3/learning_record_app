@@ -1,4 +1,8 @@
 <header>
   <p class='header-title'>My Portfolio</p>
-  <button class='button-white btn btn-light'>ログアウト</button>
+  <div class="d-flex justify-content-center">
+    <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: 'button-white btn btn-light'%>
+  </div>
+
+
 </header>
