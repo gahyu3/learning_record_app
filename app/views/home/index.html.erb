@@ -1,2 +1,25 @@
-<p>topページ</p>
-<%= current_user.name %>
+<div class='container d-flex justify-content-center'>
+  <div class='row profile'>
+    <div class='col avatar mt-3 text-center'>
+      <%= image_tag 'avatar.png', size: '360x360',class: 'rounded-circle' %>
+      <div class='login-name mt-4'>
+        <%= current_user.name %>
+      </div>
+    </div>
+    <div class='col profile-content d-flex align-items-center'>
+      <div class='profile-text ms-4'>
+        <h2 class='profile-title border-bottom border-black'>自己紹介</h2>
+        <div class='profile-introduction mt-4 mb-4'>
+          <%= current_user.introduction %>
+        </div>
+        <div>
+          <%= link_to '自己紹介を編集', '#', class: 'button-blue btn btn-secondary', style: 'padding: 10px;' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='row chart'>
+
+  </div>
+
+</div>
