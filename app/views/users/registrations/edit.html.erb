@@ -1,43 +1,41 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <div class='container d-flex justify-content-center align-items-center'>
+    <div class='form-field'>
+    <h2 class='title text-center mt-5 mb-5'>自己紹介を編集する</h2>
+      <%= form_with model: resource, url: registration_path(resource_name), local: true do |f| %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+        <div class='field mt-3 mb-5'>
+          <%= f.label :introduction %>
+          <%= f.text_area :introduction, class: 'form-control border-0 border-bottom border-dark' %>
+          <div class='error-message mt-3'>
+            <ul class='list-unstyled'>
+              <% resource.errors.full_messages_for(:introduction).each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+          <div class='form-text'>50文字以上200文字以下で入力してください</div>
+        </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <div class='field mt-3 mb-5'>
+          <div class='avatar-label mb-1'>アバター画像</div>
+          <%= f.label :avatar_image,class: 'file-button btn btn-light' do %>
+          <span id='file-name' style='color: black;'>画像ファイルを添付する</span>
+          <%= f.file_field  :avatar_image, class: 'form-control', accept: 'image/*', style:'display:none;' %>
+          <%= f.hidden_field :avatar_image_cache %>
+          <% end %>
+        </div>
+
+        <div class='action d-flex justify-content-center align-items-center'>
+          <%= f.submit '自己紹介を確定する', class: 'button-blue btn btn-secondary'%>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+<script>
+  document.getElementById('user_avatar_image').addEventListener('change', function() {
+  var file = this.files[0];
+  document.getElementById('file-name').textContent = file.name;  
+}, false);
+</script>
