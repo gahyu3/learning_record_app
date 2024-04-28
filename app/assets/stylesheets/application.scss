@@ -92,6 +92,32 @@
   color: #0000008A;
 }
 
+.avatar-label {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0.15px;
+  color: #0000008A;
+}
+
+.field textarea{
+  height: 95px;
+  border-radius: 0%;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+  resize:none;
+}
+
+.form-text {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+
 .error-message {
   color: #ec1212;
 }
@@ -110,6 +136,17 @@
 .profile-introduction {
   width: 520px;
   height: 81px;
+}
+
+.file-button {
+  height: 32px;
+  padding: 8px 24px 8px 24px;
+  border-radius: 4px 4px 4px 4px;
+  background: #0000001A;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.41px;
 }
 
 .profile-title {

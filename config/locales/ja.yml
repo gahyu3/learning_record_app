@@ -7,3 +7,5 @@ ja:
         name: '氏名'
         email: 'メールアドレス'
         password: 'パスワード'
+        introduction: '自己紹介文'
+        avatar_image: 'アバター画像'

@@ -45,6 +45,8 @@ gem 'bootstrap'
 
 gem 'mini_racer'
 
+gem 'carrierwave'
+
 # Use Sass to process CSS
 gem "sassc-rails"
 
