@@ -2,7 +2,6 @@
  @import "bootstrap";
 
  header {
-  width: 1440px;
   height: 120px;
   padding: 0px 40px 0px 40px;
   background: #1B5678;
@@ -29,7 +28,6 @@
  }
 
  footer {
-  width: 1440px;
   height: 40px;
   top: 984px;
   padding: 0px 40px 0px 40px;
@@ -156,6 +154,7 @@
   font-size: 36px;
   font-weight: 700;
   line-height: 42.19px;
+  border-bottom: 2px solid #00000080
 }
 
 .login-name {
