@@ -1,0 +1,106 @@
+<div class='container learning '>
+  <div class='date-button mt-4'>
+    <%= form_with url: edit_learning_datum_path, method: :get, local: true, id: 'edit_form'  do |f| %>
+      <%= f.select :month, options_for_select({ 
+        Date.today.month.to_s + '月'  => Date.today,
+        Date.today.prev_month.month.to_s + '月' => Date.today.prev_month,
+        Date.today.prev_month.prev_month.month.to_s + '月' => Date.today.prev_month.prev_month }, params[:month]), {} ,class: 'form-select', onchange:"submitForm()" %>
+    <% end %>
+  </div>
+  
+  
+
+  <div class='d-flex justify-content-center border rounded mt-5'>
+    <div class='learning-form'>
+      <div class='row mt-4 mb-4'>
+        <div class='col'>
+          <h2 class='edit-title'>バックエンド</h2>
+        </div>
+        <div class='col d-flex justify-content-end'>
+          <div>
+            <%= link_to '項目を追加する', '#', class: 'button-blue btn btn-secondary', style: 'padding: 10px;' %>
+          </div>
+        </div>
+      </div>
+      <div class='table-form overflow-auto border rounded'>
+        <table class="table">
+          <thead class="sticky-top">
+            <tr>
+              <th style="width: 25%"><div class='ms-3'>項目名</div></th>
+              <th style="width: 30%">学習時間</th>
+              <th style="width: 25%"></th>
+              <th style="width: 25%"></th>
+            </tr>
+          </thead>
+          <%= render 'learning_data/table', learning_data: @learning_data_backend if @learning_data_backend.present? %>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='d-flex justify-content-center border rounded mt-5'>
+    <div class='learning-form'>
+      <div class='row mt-4 mb-4'>
+        <div class='col'>
+          <h2 class='edit-title'>フロントエンド</h2>
+        </div>
+        <div class='col d-flex justify-content-end'>
+          <div>
+            <%= link_to '項目を追加する', '#', class: 'button-blue btn btn-secondary', style: 'padding: 10px;' %>
+          </div>
+        </div>
+      </div>
+      <div class='table-form overflow-auto border rounded'>
+        <table class="table">
+          <thead class="sticky-top">
+            <tr>
+              <th style="width: 25%"><div class='ms-3'>項目名</div></th>
+              <th style="width: 30%">学習時間</th>
+              <th style="width: 25%"></th>
+              <th style="width: 25%"></th>
+            </tr>
+          </thead>
+          <%= render 'learning_data/table', learning_data: @learning_data_frontend if @learning_data_frontend.present? %>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='d-flex justify-content-center border rounded mt-5'>
+    <div class='learning-form'>
+      <div class='row mt-4 mb-4'>
+        <div class='col'>
+          <h2 class='edit-title'>インフラ</h2>
+        </div>
+        <div class='col d-flex justify-content-end'>
+          <div>
+            <%= link_to '項目を追加する', '#', class: 'button-blue btn btn-secondary', style: 'padding: 10px;' %>
+          </div>
+        </div>
+      </div>
+      <div class='table-form overflow-auto border rounded'>
+        <table class="table">
+          <thead class="sticky-top">
+            <tr>
+              <th style="width: 25%"><div class='ms-3'>項目名</div></th>
+              <th style="width: 30%">学習時間</th>
+              <th style="width: 25%"></th>
+              <th style="width: 25%"></th>
+            </tr>
+          </thead>
+          <%= render 'learning_data/table', learning_data: @learning_data_infrastructur if @learning_data_infrastructur.present? %>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function submitForm() {
+    document.getElementById('edit_form').submit();
+  }
+
+</script>

@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable
   mount_uploader :avatar_image, AvatarImageUploader
 
+  has_many :learning_data, dependent: :destroy
+
   validates :name, presence: { message: 'は必ず入力してください' }, length: { maximum: 255, message: 'は255文字以内で入力してください'}
   validates :email, presence: { message: 'は必ず入力してください' }, uniqueness: true, format: { with: /[^@]+@[^@]+\.[^@]+/, message: 'が正しい形式ではありません' }
   validates :password, presence: { message: 'は必ず入力してください' }, format: { with: /\A(?=.*[a-zA-Z])(?=.*\d).{6,}\z/, message: 'は英数字8文字以上で入力してください' }, on: :create

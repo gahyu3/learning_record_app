@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
    root "home#index"
-
+   resources :learning_data, only: [:edit]
 end

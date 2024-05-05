@@ -1,25 +1,31 @@
-<div class='container d-flex justify-content-center'>
-  <div class='row profile'>
-    <div class='col avatar mt-3 text-center'>
-      <%= image_tag current_user.avatar_image.url, size: '360x360',class: 'rounded-circle' %>
-      <div class='login-name mt-4'>
-        <%= current_user.name %>
-      </div>
-    </div>
-    <div class='col profile-content d-flex align-items-center'>
-      <div class='profile-text ms-4'>
-        <h2 class='profile-title'>自己紹介</h2>
-        <div class='profile-introduction mt-4 mb-4'>
-          <%= current_user.introduction %>
+<div class='container'>
+  <div class='d-flex justify-content-center'>
+    <div class='row profile'>
+      <div class='col avatar mt-3 text-center'>
+        <%= image_tag current_user.avatar_image.url, size: '360x360',class: 'rounded-circle' %>
+        <div class='login-name mt-4'>
+          <%= current_user.name %>
         </div>
-        <div>
-          <%= link_to '自己紹介を編集する', edit_user_registration_path, class: 'button-blue btn btn-secondary', style: 'padding: 12px;' %>
+      </div>
+      <div class='col profile-content d-flex align-items-center'>
+        <div class='profile-text ms-4'>
+          <h2 class='profile-title'>自己紹介</h2>
+          <div class='profile-introduction mt-4 mb-4'>
+            <%= current_user.introduction %>
+          </div>
+          <div>
+            <%= link_to '自己紹介を編集する', edit_user_registration_path, class: 'button-blue btn btn-secondary', style: 'padding: 12px;' %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class='row chart'>
 
-  </div>
+    <div class='row chart'>
+      <div class='text-center'>
+        <%= link_to '編集をする', edit_learning_datum_path(current_user), class: 'button-blue btn btn-secondary', style: 'padding: 12px;'%>
+      </div>
+    </div>
+
 
 </div>
