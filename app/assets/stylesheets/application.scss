@@ -1,6 +1,10 @@
 
  @import "bootstrap";
 
+ body {
+  margin-bottom: 50px;
+ }
+
  header {
   height: 120px;
   padding: 0px 40px 0px 40px;
@@ -29,7 +33,6 @@
 
  footer {
   height: 40px;
-  top: 984px;
   padding: 0px 40px 0px 40px;
   background: #1B5678;
   position: absolute;
@@ -122,7 +125,6 @@
 
 .profile {
   width: 960px;
-  height: 360px;
   margin-top: 50px;
 }
 
@@ -164,4 +166,58 @@
   line-height: 20px;
 }
 
- 
+.learning {
+  width: 960px ;
+}
+
+.learning-form {
+  width: 880px;
+  height: 356px;
+}
+
+
+.table-form {
+  height: 230px;
+  box-shadow: 0px 1px 5px 0px #0000001F;
+
+  box-shadow: 0px 2px 2px 0px #00000024;
+
+  box-shadow: 0px 3px 1px -2px #00000033;
+}
+
+.btn-red {
+  background: #EE6969;
+}
+
+.btn-border {
+  background: #FFFFFF;
+  border: 1px solid #1B5678;
+  color: #1B5678;
+}
+
+td {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+th {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.edit-title {
+  width: 240px;
+  height: 44px;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 700;
+  border-bottom: 2px solid #00000080;
+}
+
+.date-button {
+  width: 94px;
+  height: 44px;
+}
+
