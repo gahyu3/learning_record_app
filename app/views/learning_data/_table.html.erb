@@ -1,8 +1,8 @@
   <% learning_data.each do |data| %>
   <tbody>
     <tr>
-      <td><div class='ms-3'><%= data.learning_subject %></div></td>
-      <td><input type="number" value=<%= data.time %>></td>
+      <td><div class='ms-3 mt-2'><%= data.learning_subject %></div></td>
+      <td><input type="number" value=<%= data.time %>, style='margin-top: 5px;'></td>
       <td><div class='btn-border btn btn-light'>学習時間を保存する</div></td>
       <td class='d-flex justify-content-center' ><div class='btn-red btn btn-danger'>削除する</div></td>
     </tr>

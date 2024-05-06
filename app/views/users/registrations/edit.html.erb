@@ -6,6 +6,7 @@
         <div class='field mt-3 mb-5'>
           <%= f.label :introduction %>
           <%= f.text_area :introduction, class: 'form-control border-0 border-bottom border-dark' %>
+          <div class='form-text'>50文字以上200文字以下で入力してください</div>
           <div class='error-message mt-3'>
             <ul class='list-unstyled'>
               <% resource.errors.full_messages_for(:introduction).each do |message| %>
@@ -13,7 +14,6 @@
               <% end %>
             </ul>
           </div>
-          <div class='form-text'>50文字以上200文字以下で入力してください</div>
         </div>
 
         <div class='field mt-3 mb-5'>
