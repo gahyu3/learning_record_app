@@ -135,7 +135,7 @@
 
 .profile-introduction {
   width: 520px;
-  height: 81px;
+  min-height: 81px;
 }
 
 .file-button {
@@ -214,6 +214,15 @@ th {
   font-size: 24px;
   font-weight: 700;
   border-bottom: 2px solid #00000080;
+}
+
+.edit-button-blue {
+    background-color: #1B5678;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    color: #FFFFFF;
+    padding: 16px 40px;
 }
 
 .date-button {
