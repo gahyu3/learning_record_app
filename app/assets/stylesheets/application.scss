@@ -228,5 +228,24 @@ th {
 .date-button {
   width: 94px;
   height: 44px;
+  position: relative;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 700;
 }
 
+.date-button::before {
+  content: '';
+  position: absolute;
+  top: 45%;
+  right: 10px;
+  transform: translateY(-60%) rotate(180deg);
+  background: #0b0b0b;
+  height: calc(tan(30deg) * 30px / 2);
+  width: 15px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.form-select {
+  --bs-form-select-bg-img: '';
+}
