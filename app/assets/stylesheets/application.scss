@@ -244,6 +244,7 @@ th {
   height: calc(tan(30deg) * 30px / 2);
   width: 15px;
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  pointer-events: none;
 }
 
 .form-select {
