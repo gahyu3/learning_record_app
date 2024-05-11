@@ -1,0 +1,52 @@
+  <div class='container d-flex justify-content-center align-items-center'>
+    <div class='form-field'>
+    <h2 class='title text-center mt-5 mb-5'><%= @category.name %>に項目を追加</h2>
+      <%= form_with model: @learning_data, remote: true do |f| %>
+
+        <div class='field mt-3 mb-5'>
+          <%= f.label :learning_subject %>
+          <%= f.text_field :learning_subject, class: 'form-control border-0 border-bottom border-dark' %>
+          <div class='error-message mt-3'>
+            <ul class='list-unstyled'>
+              <% if flash[:subject].present? %>
+                <% flash[:subject].each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+
+        <div class='field mt-3 mb-5'>
+          <%= f.label :time %>
+          <%= f.number_field :time, class: 'form-control border-0 border-bottom border-dark' %>
+          <div class='form-text'>分単位で入力してください</div>
+          <div class='error-message mt-3'>
+            <ul class='list-unstyled'>
+              <% if flash[:time].present? %>
+                <% flash[:time].each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+
+        <div class='field mt-3 mb-5'>
+          <%= f.hidden_field :date, value: @date, class: 'form-control border-0 border-bottom border-dark' %>
+        </div>
+
+        <div class='field mt-3 mb-5'>
+          <%= f.hidden_field :category_id, value: @category.id ,class: 'form-control border-0 border-bottom border-dark' %>
+        </div>
+
+        <div class='action d-flex justify-content-center align-items-center'>
+          <%= f.submit '追加する', class: 'button-blue btn btn-secondary'%>
+        </div>
+      <% end %>
+    </div>
+    
+  </div>
+    <% if flash[:notice] %>
+      <%= render 'learning_data/modal', category: @category %>
+    <% end %>

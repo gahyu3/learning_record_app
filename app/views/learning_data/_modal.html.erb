@@ -1,0 +1,22 @@
+<div class="modal" id='modal' tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class='d-flex justify-content-center mt-4 mb-4'>
+          <p><%= category.name %>に<%= flash[:notice] %>を<br>
+          <%= flash[:learning_time] %>分で追加しました！</p>
+        </div>
+        <div class='action d-flex justify-content-center mt-3'>
+          <%= link_to '編集ページに戻る',edit_learning_datum_path(current_user), class: 'button-blue btn btn-secondary',style: 'padding: 14px; font-size: 14px;'%></div>
+        </div>
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var myModal = new bootstrap.Modal(document.getElementById('modal'));
+    myModal.show();
+  });
+</script>

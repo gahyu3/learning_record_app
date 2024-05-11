@@ -234,6 +234,19 @@ th {
   font-weight: 700;
 }
 
+
+.modal-content {
+  margin-top: 200px;
+  width:  640px;
+  height: 240px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 0;
+}
+
+
+
 .date-button::before {
   content: '';
   position: absolute;
@@ -250,3 +263,4 @@ th {
 .form-select {
   --bs-form-select-bg-img: '';
 }
+
