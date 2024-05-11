@@ -135,7 +135,7 @@
 
 .profile-introduction {
   width: 520px;
-  height: 81px;
+  min-height: 81px;
 }
 
 .file-button {
@@ -216,10 +216,24 @@ th {
   border-bottom: 2px solid #00000080;
 }
 
+.edit-button-blue {
+    background-color: #1B5678;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    color: #FFFFFF;
+    padding: 16px 40px;
+}
+
 .date-button {
   width: 94px;
   height: 44px;
+  position: relative;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 700;
 }
+
 
 .modal-content {
   margin-top: 200px;
@@ -231,4 +245,22 @@ th {
   border-radius: 0;
 }
 
+
+
+.date-button::before {
+  content: '';
+  position: absolute;
+  top: 45%;
+  right: 10px;
+  transform: translateY(-60%) rotate(180deg);
+  background: #0b0b0b;
+  height: calc(tan(30deg) * 30px / 2);
+  width: 15px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
+.form-select {
+  --bs-form-select-bg-img: '';
+}
 
