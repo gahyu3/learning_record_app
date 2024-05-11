@@ -9,3 +9,6 @@ ja:
         password: 'パスワード'
         introduction: '自己紹介文'
         avatar_image: 'アバター画像'
+      learning_datum:
+        learning_subject: '項目名'
+        time: '学習時間'

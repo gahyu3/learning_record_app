@@ -18,7 +18,7 @@
         </div>
         <div class='col d-flex justify-content-end'>
           <div>
-            <%= link_to '項目を追加する', '#', class: 'button-blue btn btn-secondary', style: 'padding: 10px;' %>
+            <%= link_to '項目を追加する', new_learning_datum_path(category_id: 1, month: params[:month]) , class: 'button-blue btn btn-secondary', style: 'padding: 10px;' %>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@
         </div>
         <div class='col d-flex justify-content-end'>
           <div>
-            <%= link_to '項目を追加する', '#', class: 'button-blue btn btn-secondary', style: 'padding: 10px;' %>
+            <%= link_to '項目を追加する', new_learning_datum_path(category_id: 2, month: params[:month]), class: 'button-blue btn btn-secondary', style: 'padding: 10px;' %>
           </div>
         </div>
       </div>
@@ -76,7 +76,7 @@
         </div>
         <div class='col d-flex justify-content-end'>
           <div>
-            <%= link_to '項目を追加する', '#', class: 'button-blue btn btn-secondary', style: 'padding: 10px;' %>
+            <%= link_to '項目を追加する', new_learning_datum_path(category_id: 3, month: params[:month]), class: 'button-blue btn btn-secondary', style: 'padding: 10px;' %>
           </div>
         </div>
       </div>
