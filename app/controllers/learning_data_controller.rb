@@ -41,6 +41,14 @@ class LearningDataController < ApplicationController
     end
   end
 
+  def destroy
+    @learning_data = current_user.learning_data.find(params[:id])
+    if @learning_data.destroy!
+      flash[:learning_subject] = @learning_data.learning_subject + 'を削除しました！'
+      redirect_to edit_learning_datum_path(current_user)
+    end
+  end
+
   private
 
   def learning_data_params
