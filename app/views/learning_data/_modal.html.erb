@@ -2,11 +2,13 @@
   <div class="modal-dialog d-flex justify-content-center">
     <div class="modal-content">
       <div class="modal-body position-relative">
-        <div class='d-flex justify-content-center mt-4 mb-4'>
+        <div class='d-flex justify-content-center mt-5 mb-4'>
           <% if category %>
-          <p><%= category.name %>に<%= flash[:notice] %>を<br>
-          <% end %>
+          <p><%= category.name %>に<%= flash[:notice] %><br>
           <%= flash[:learning_time] %>分で追加しました！</p>
+          <% else %>
+          <p><%= flash[:notice] %></p>
+          <% end %>
         </div>
         <div class='action d-flex justify-content-center position-absolute bottom-0 start-50 translate-middle-x mb-5'>
           <%= link_to '編集ページに戻る',edit_learning_datum_path(current_user), class: 'button-blue btn btn-secondary',style: 'padding: 14px; font-size: 14px;', data: { turbo: false}%></div>
