@@ -1,13 +1,15 @@
 <tbody>
   <% learning_data.each do |data| %>
     <tr>
-      <%= form_with model: data, local: true do |f| %>
+      <%= form_with model: data, data: { turbo: false } do |f| %>
         <td><div class='ms-3 mt-2'><%= data.learning_subject %></div></td>
         <td class='number'><%= f.number_field :time, value: data.time, style:'margin-top: 4px;', id: "learning_datum_time_#{data.id}",class: 'input p-1' %></td>
         <td><div>
           <%= f.submit '学習時間を保存する', class: 'btn-border btn btn-light' %>
         </div></td>
-        <td class='text-center'><div class='btn-red btn btn-danger'>削除する</div></td>
+        <td class='text-center'><div>
+          <%= link_to '削除する', learning_datum_path(data), data: { turbo_method: :delete }, class: 'btn-red btn btn-danger'%>
+        </div></td>
       <% end %>
     </tr>
   <% end %>
