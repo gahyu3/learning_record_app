@@ -4,10 +4,10 @@
       <div class="modal-body position-relative">
         <div class='d-flex justify-content-center mt-5 mb-4'>
           <% if category %>
-          <p><%= category.name %>に<%= flash[:notice] %><br>
+          <p><%= category.name %>に<%= flash[:learning_subject] %><br>
           <%= flash[:learning_time] %>分で追加しました！</p>
           <% else %>
-          <p><%= flash[:notice] %></p>
+          <p><%= flash[:learning_subject] %></p>
           <% end %>
         </div>
         <div class='action d-flex justify-content-center position-absolute bottom-0 start-50 translate-middle-x mb-5'>

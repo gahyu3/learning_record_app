@@ -9,7 +9,7 @@ class LearningDataController < ApplicationController
   def create
     @learning_data = current_user.learning_data.build(learning_data_params)
     if @learning_data.save
-      flash[:notice] = @learning_data.learning_subject + 'を'
+      flash[:learning_subject] = @learning_data.learning_subject + 'を'
       flash[:learning_time] = @learning_data.time
       redirect_to new_learning_datum_path
     else
@@ -34,7 +34,7 @@ class LearningDataController < ApplicationController
   def update
     @learning_data = current_user.learning_data.find(params[:id])
     if @learning_data.update(learning_data_params)
-      flash[:notice] = @learning_data.learning_subject + 'の学習時間を保存しました！'
+      flash[:learning_subject] = @learning_data.learning_subject + 'の学習時間を保存しました！'
       redirect_to edit_learning_datum_path(current_user)
     else
       redirect_to edit_learning_datum_path(current_user)
