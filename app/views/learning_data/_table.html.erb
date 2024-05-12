@@ -1,10 +1,14 @@
+<tbody>
   <% learning_data.each do |data| %>
-  <tbody>
     <tr>
-      <td><div class='ms-3 mt-2'><%= data.learning_subject %></div></td>
-      <td class='number'><input type="number" id="<%= data.id %>" value=<%= data.time %> style='margin-top: 7px;'></td>
-      <td><div class='btn-border btn btn-light'>学習時間を保存する</div></td>
-      <td class='text-center'><div class='btn-red btn btn-danger'>削除する</div></td>
+      <%= form_with model: data, local: true do |f| %>
+        <td><div class='ms-3 mt-2'><%= data.learning_subject %></div></td>
+        <td class='number'><%= f.number_field :time, value: data.time, style:'margin-top: 4px;', id: "learning_datum_time_#{data.id}",class: 'input p-1' %></td>
+        <td><div>
+          <%= f.submit '学習時間を保存する', class: 'btn-border btn btn-light' %>
+        </div></td>
+        <td class='text-center'><div class='btn-red btn btn-danger'>削除する</div></td>
+      <% end %>
     </tr>
-  </tbody>
   <% end %>
+</tbody>

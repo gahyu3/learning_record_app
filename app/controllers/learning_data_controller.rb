@@ -13,6 +13,8 @@ class LearningDataController < ApplicationController
       flash[:learning_time] = @learning_data.time
       redirect_to new_learning_datum_path
     else
+      session[:subject] = @learning_data.learning_subject
+      session[:time] = @learning_data.time
       flash[:subject] = @learning_data.errors.full_messages_for(:learning_subject)
       flash[:time] = @learning_data.errors.full_messages_for(:time)
       redirect_to new_learning_datum_path
@@ -21,10 +23,22 @@ class LearningDataController < ApplicationController
 
 
   def edit
+    session[:subject] = nil
+    session[:time] = nil
     @month = params[:month].present? ? Date.parse(params[:month]).strftime("%Y-%m") : Date.today.strftime("%Y-%m")
     @learning_data_backend = current_user.learning_data.where(category_id: 1).where("to_char(date, 'YYYY-MM') = ?", @month)
     @learning_data_frontend = current_user.learning_data.where(category_id: 2).where("to_char(date, 'YYYY-MM') = ?", @month)
     @learning_data_infrastructur = current_user.learning_data.where(category_id: 3).where("to_char(date, 'YYYY-MM') = ?", @month)
+  end
+
+  def update
+    @learning_data = current_user.learning_data.find(params[:id])
+    if @learning_data.update(learning_data_params)
+      flash[:learning_time] = @learning_data.time
+      redirect_to edit_learning_datum_path(current_user)
+    else
+      redirect_to edit_learning_datum_path(current_user)
+    end
   end
 
   private
