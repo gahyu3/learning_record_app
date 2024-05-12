@@ -187,12 +187,17 @@
 
 .btn-red {
   background: #EE6969;
+  font-size: 14px;
+  margin-top: 2px;
 }
 
 .btn-border {
   background: #FFFFFF;
   border: 1px solid #1B5678;
   color: #1B5678;
+  font-family: Roboto;
+  font-size: 14px;
+  margin-top: 2px;
 }
 
 td {
@@ -207,6 +212,13 @@ th {
   font-weight: 500;
 }
 
+tr {
+  height: 57px ;
+}
+
+.number input {
+  border: 1px solid #0000003B
+}
 .edit-title {
   width: 240px;
   height: 44px;
