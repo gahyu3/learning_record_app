@@ -1,11 +1,11 @@
   <div class='container d-flex justify-content-center align-items-center'>
     <div class='form-field'>
     <h2 class='title text-center mt-5 mb-5'><%= @category.name %>に項目を追加</h2>
-      <%= form_with model: @learning_data, remote: true do |f| %>
+      <%= form_with model: @learning_data do |f| %>
 
         <div class='field mt-3 mb-5'>
           <%= f.label :learning_subject %>
-          <%= f.text_field :learning_subject, class: 'form-control border-0 border-bottom border-dark' %>
+          <%= f.text_field :learning_subject, class: 'form-control border-0 border-bottom border-dark', value: session[:subject] || "" %>
           <div class='error-message mt-3'>
             <ul class='list-unstyled'>
               <% if flash[:subject].present? %>
@@ -19,7 +19,7 @@
 
         <div class='field mt-3 mb-5'>
           <%= f.label :time %>
-          <%= f.number_field :time, class: 'form-control border-0 border-bottom border-dark' %>
+          <%= f.number_field :time, class: 'form-control border-0 border-bottom border-dark', value: session[:time] || "" %>
           <div class='form-text'>分単位で入力してください</div>
           <div class='error-message mt-3'>
             <ul class='list-unstyled'>
@@ -37,7 +37,7 @@
         </div>
 
         <div class='field mt-3 mb-5'>
-          <%= f.hidden_field :category_id, value: @category.id ,class: 'form-control border-0 border-bottom border-dark' %>
+          <%= f.hidden_field :category_id, value: @category.id  ,class: 'form-control border-0 border-bottom border-dark' %>
         </div>
 
         <div class='action d-flex justify-content-center align-items-center'>
@@ -50,3 +50,5 @@
     <% if flash[:notice] %>
       <%= render 'learning_data/modal', category: @category %>
     <% end %>
+
+    

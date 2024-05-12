@@ -4,7 +4,7 @@ class LearningDatum < ApplicationRecord
 
   validates :learning_subject, presence: { message: 'は必ず入力してください' }, length: { maximum: 50, message: 'は50文字以内で入力してください'}
   validates :time, presence: { message: 'は必ず入力してください' }, numericality: { greater_than_or_equal_to: 0, message: 'は0以上の数字で入力してください'}
-  validate :unique_learning_subject_month
+  validate :unique_learning_subject_month, on: :create
 
   private
 

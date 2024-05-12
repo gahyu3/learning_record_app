@@ -216,9 +216,12 @@ tr {
   height: 57px ;
 }
 
+
 .number input {
-  border: 1px solid #0000003B
+  border: 1px solid #0000003B;
+  border-radius: 4px;
 }
+
 .edit-title {
   width: 240px;
   height: 44px;
@@ -276,3 +279,47 @@ tr {
   --bs-form-select-bg-img: '';
 }
 
+.number {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    top: 15px;
+    right: 95px;
+    color: #0000008A;
+    ;
+    font-size: 9px;
+    content: "▲";
+    pointer-events: none;
+  }
+  
+  &:after {
+    position: absolute;
+    bottom: 15px;
+    right: 95px;
+    color: #0000008A;
+    font-size: 9px;
+    content: "▼";
+    pointer-events: none;
+  }
+  
+  .input {
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-inner-spin-button {
+      position: absolute;
+      top: 0; bottom: 0;
+      right: 0;
+      margin: auto;
+      transform-origin: right center;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    &::-webkit-contacts-auto-fill-button {
+      opacity: 0;
+    }
+  }
+}
