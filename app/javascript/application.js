@@ -3,6 +3,8 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "popper"
 import "bootstrap"
+import "chartkick"
+import "Chart.bundle"
 import jquery from "jquery"
  window.$ = jquery
 

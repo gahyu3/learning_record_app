@@ -35,9 +35,9 @@ class LearningDataController < ApplicationController
     @learning_data = current_user.learning_data.find(params[:id])
     if @learning_data.update(learning_data_params)
       flash[:learning_subject] = @learning_data.learning_subject + 'の学習時間を保存しました！'
-      redirect_to edit_learning_datum_path(current_user)
+      redirect_to edit_learning_datum_path(current_user, month: @learning_data.date)
     else
-      redirect_to edit_learning_datum_path(current_user)
+      redirect_to edit_learning_datum_path(current_user,  month: @learning_data.date)
     end
   end
 
@@ -45,7 +45,7 @@ class LearningDataController < ApplicationController
     @learning_data = current_user.learning_data.find(params[:id])
     if @learning_data.destroy!
       flash[:learning_subject] = @learning_data.learning_subject + 'を削除しました！'
-      redirect_to edit_learning_datum_path(current_user)
+      redirect_to edit_learning_datum_path(current_user, month: @learning_data.date)
     end
   end
 

@@ -47,6 +47,8 @@ gem 'mini_racer'
 
 gem 'carrierwave'
 
+gem "chartkick"
+
 # Use Sass to process CSS
 gem "sassc-rails"
 

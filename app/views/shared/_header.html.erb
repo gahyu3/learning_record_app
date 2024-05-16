@@ -1,5 +1,7 @@
 <header>
-  <p class='header-title'>My Portfolio</p>
+  <%= link_to root_path, class: "text-decoration-none" do %>
+    <p class='header-title'>My Portfolio</p>
+  <% end %>
   <div class="d-flex justify-content-center">
     <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: 'button-white btn btn-light'%>
   </div>
