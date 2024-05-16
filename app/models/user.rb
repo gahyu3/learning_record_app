@@ -11,4 +11,17 @@ class User < ApplicationRecord
   validates :email, presence: { message: 'は必ず入力してください' }, uniqueness: true, format: { with: /[^@]+@[^@]+\.[^@]+/, message: 'が正しい形式ではありません' }
   validates :password, presence: { message: 'は必ず入力してください' }, format: { with: /\A(?=.*[a-zA-Z])(?=.*\d).{6,}\z/, message: 'は英数字8文字以上で入力してください' }, on: :create
   validates :introduction, presence: { message: 'は必ず入力してください' }, length: { minimum: 50, maximum: 200, message: 'は50文字以上200文字以下で入力してください' }, on: :update
+
+  def month(type)
+    learning_data.where(category_id: type).this_month.sum(:time)
+  end
+
+  def last_month(type)
+    learning_data.where(category_id: type).last_month.sum(:time)
+  end
+
+  def two_month_ago(type)
+    learning_data.where(category_id: type).two_month_ago.sum(:time)
+  end
+
 end
