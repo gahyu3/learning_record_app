@@ -47,6 +47,10 @@ gem 'mini_racer'
 
 gem 'carrierwave'
 
+gem 'fog-aws'
+
+gem 'dotenv-rails'
+
 gem "chartkick"
 
 # Use Sass to process CSS
