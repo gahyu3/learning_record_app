@@ -2,7 +2,11 @@ class LearningDataController < ApplicationController
 
   def new
     @learning_data = LearningDatum.new
-    @date = params[:month].present? ? Date.parse(params[:month]) : Date.today
+    @date = if params[:month].present?
+              Date.parse(params[:month]).strftime("%Y-%m")
+            else
+              Date.today.strftime("%Y-%m")
+            end
     @category = Category.find(params[:category_id])
   end
 
@@ -25,10 +29,14 @@ class LearningDataController < ApplicationController
   def edit
     session[:subject] = nil
     session[:time] = nil
-    @month = params[:month].present? ? Date.parse(params[:month]).strftime("%Y-%m") : Date.today.strftime("%Y-%m")
-    @learning_data_backend = current_user.learning_data.where(category_id: 1).where("to_char(date, 'YYYY-MM') = ?", @month)
-    @learning_data_frontend = current_user.learning_data.where(category_id: 2).where("to_char(date, 'YYYY-MM') = ?", @month)
-    @learning_data_infrastructur = current_user.learning_data.where(category_id: 3).where("to_char(date, 'YYYY-MM') = ?", @month)
+    @month =  if params[:month].present? 
+                Date.parse(params[:month]).strftime("%Y-%m") 
+              else 
+                Date.today.strftime("%Y-%m") 
+              end
+    @learning_data_backend = current_user.learning_data.where(category_id: 1).where("to_char(date, 'YYYY-MM') = ?", @month).order(:id)
+    @learning_data_frontend = current_user.learning_data.where(category_id: 2).where("to_char(date, 'YYYY-MM') = ?", @month).order(:id)
+    @learning_data_infrastructur = current_user.learning_data.where(category_id: 3).where("to_char(date, 'YYYY-MM') = ?", @month).order(:id)
   end
 
   def update

@@ -291,47 +291,31 @@ tr {
   --bs-form-select-bg-img: '';
 }
 
+.input::-webkit-inner-spin-button,
+.input::-webkit-outer-spin-button {
+-webkit-appearance: none!important;
+margin: 0!important;
+-moz-appearance:textfield!important;
+}
+
 .number {
   position: relative;
+}
 
-  &:before {
-    position: absolute;
-    top: 15px;
-    right: 95px;
-    color: #0000008A;
-    ;
-    font-size: 9px;
-    content: "▲";
-    pointer-events: none;
-  }
-  
-  &:after {
-    position: absolute;
-    bottom: 15px;
-    right: 95px;
-    color: #0000008A;
-    font-size: 9px;
-    content: "▼";
-    pointer-events: none;
-  }
-  
-  .input {
-    &:focus {
-      outline: none;
-    }
+.arrow_up {
+  position: absolute;
+  top: 13px;
+  right: 100px;
+  font-size: 10px;
+  color: grey;
+  cursor: pointer;
+}
 
-    &::-webkit-inner-spin-button {
-      position: absolute;
-      top: 0; bottom: 0;
-      right: 0;
-      margin: auto;
-      transform-origin: right center;
-      opacity: 0;
-      cursor: pointer;
-    }
-    
-    &::-webkit-contacts-auto-fill-button {
-      opacity: 0;
-    }
-  }
+.arrow_down {
+  position: absolute;
+  bottom: 14px;
+  right: 100px;
+  font-size: 10px;
+  color: grey;
+  cursor: pointer;
 }
