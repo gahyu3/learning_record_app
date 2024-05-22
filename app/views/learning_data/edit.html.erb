@@ -2,9 +2,9 @@
   <div class="date-button mt-4">
     <%= form_with url: edit_learning_datum_path(current_user), method: :get, data: { turbo: false }, id: "edit_form" do |f| %>
       <%= f.select :month, options_for_select({ 
-        Date.today.month.to_s + "月"  => Date.today,
-        Date.today.prev_month.month.to_s + "月" => Date.today.prev_month,
-        Date.today.prev_month.prev_month.month.to_s + "月" => Date.today.prev_month.prev_month }, params[:month]), {} ,class: "form-select", onchange:"submitForm()" %>
+        "#{Date.today.month}月"  => Date.today,
+        "#{Date.today.prev_month.month}月" => Date.today.prev_month,
+        "#{Date.today.prev_month.prev_month.month}月" => Date.today.prev_month.prev_month },"#{@month}-#{Date.today.day}"), {} ,class: "form-select", onchange:"submitForm()" %>
     <% end %>
   </div>
   
