@@ -1,6 +1,6 @@
 <div class="container learning ">
   <div class="date-button mt-4">
-    <%= form_with url: edit_learning_datum_path, method: :get, local: true, id: "edit_form"  do |f| %>
+    <%= form_with url: edit_learning_datum_path(current_user), method: :get, data: { turbo: false }, id: "edit_form" do |f| %>
       <%= f.select :month, options_for_select({ 
         Date.today.month.to_s + "月"  => Date.today,
         Date.today.prev_month.month.to_s + "月" => Date.today.prev_month,
